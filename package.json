@@ -4,8 +4,10 @@
   "description": "its a chatting website with socket.io back end where user can chat with each other in a group ",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  
   "author": "amanMishra",
   "license": "ISC",
   "dependencies": {
