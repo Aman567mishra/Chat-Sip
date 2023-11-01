@@ -1,0 +1,32 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <div class="login-container">
+        <h1>Chat Sip</h1>
+      <form id="loginForm" action="#">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+        <label for="roomID">Room ID</label>
+        <input type="text" id="roomID" name="roomID" required>
+        <button type="submit">Join Chat</button>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function () {
+        $('#loginForm').submit(function (e) {
+          e.preventDefault();
+          const username = $('#username').val();
+          const roomID = $('#roomID').val();
+          window.location.href = `chat.html?username=${username}&room=${roomID}`;
+        });
+      });
+    </script>
+  </body>
+</html>

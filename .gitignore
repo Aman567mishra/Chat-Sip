@@ -1,0 +1,16 @@
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules/
+
+# Build output
+dist/
+build/
+out/
+
+# Sensitive or configuration files
+config.js
+.env
+secrets.json
