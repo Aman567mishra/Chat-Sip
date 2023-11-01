@@ -20,24 +20,20 @@ io.on('connection', (socket) => {
   });
 
   socket.on('disconnect', () => {
-    if (socket.username) {
-      console.log(`${socket.username} left the chat`);
-      io.to(socket.roomID).emit('user left', socket.username); // Emit the 'user left' event with the username
-    }
+    const roomID = socket.roomID;
+    const username = socket.username || 'A user';
+    console.log(`${username} left the chat`);
+    io.to(roomID).emit('user left', username);
   });
 
   socket.on('chat message', (data) => {
     const { message, username, roomID } = data;
-    socket.roomID = roomID; // Store the room ID as a property of the socket
-    socket.username = username; // Store the username as a property of the socket
+    socket.roomID = roomID;
+    socket.username = username;
     io.to(roomID).emit('chat message', { message: message, username: username });
   });
 });
 
-
-
-
 server.listen(3000, () => {
   console.log('listening on *:3000');
 });
-
