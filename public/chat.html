@@ -6,7 +6,6 @@
     <title>Chat Room</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    
 </head>
 <body>
 
@@ -54,7 +53,7 @@
     socket.on('user left', function (username) {
         const messageContainer = document.getElementById('messages');
         const messageElement = document.createElement('div');
-        messageElement.classList.add('message');
+        messageElement.classList.add('message', 'user-left-message'); // Add the 'user-left-message' class
         messageElement.textContent = `${username} left the chat`;
         messageContainer.appendChild(messageElement);
     });
